@@ -785,7 +785,9 @@
     footer { font-size: 10px; margin-top: 32px; padding-top: 16px; }
   }
 
-  /* Scrolling timeline: labels stay pinned; rows outside the visible window collapse */
+
+  /* Timeline focus: labels stay pinned while the timeline scrolls; rows whose
+     bars are outside the visible window collapse (toggle in the topbar). */
   .row-label {
     position: sticky;
     left: 0;
@@ -1609,14 +1611,17 @@
   })();
 </script>
 
+
 <script>
+  // Timeline focus — generic: reads column count and label width from the DOM.
+  // On screens wide enough to show the whole board this never hides anything.
   (function() {
     var wrap = document.querySelector('.gantt-wrap');
     var gantt = document.querySelector('.gantt');
     if (!wrap || !gantt) return;
 
     var firstTrack = gantt.querySelector('.row-track');
-    var COLS = firstTrack ? getComputedStyle(firstTrack).gridTemplateColumns.split(' ').length : 29;
+    var COLS = firstTrack ? getComputedStyle(firstTrack).gridTemplateColumns.split(' ').length : 16;
     var focusOn = true;
 
     function labelW() {
@@ -1624,6 +1629,7 @@
     }
 
     function barSpan(row) {
+      if (!row) return null;
       var bar = row.querySelector('.row-track .bar');
       if (!bar || !bar.style.gridColumn) return null;
       var m = bar.style.gridColumn.match(/(\d+)\s*\/\s*(\d+)/);
@@ -1632,9 +1638,9 @@
 
     function apply() {
       var lw = labelW();
-      var trackW = gantt.offsetWidth - lw;
-      var colW = trackW / COLS;
-      var visStart = Math.max(0, wrap.scrollLeft + lw - lw); // track-relative left edge
+      var colW = (gantt.offsetWidth - lw) / COLS;
+      // the sticky label column covers the first lw px of the viewport
+      var visStart = wrap.scrollLeft;
       var visEnd = wrap.scrollLeft + wrap.clientWidth - lw;
       var c1 = Math.floor(visStart / colW) + 1;
       var c2 = Math.ceil(visEnd / colW);
@@ -1676,15 +1682,17 @@
       actions.insertBefore(btn, actions.firstChild);
     }
 
-    // open the board centered on the today line
+    // open the board centered on the today line (no-op when everything fits)
     var line = document.getElementById('todayLine');
     function centerToday() {
-      if (!line || line.style.display === 'none') { apply(); return; }
-      var x = parseFloat(line.style.left || '0');
-      wrap.scrollLeft = Math.max(0, x - wrap.clientWidth * 0.55);
+      if (line && line.style.display !== 'none') {
+        var lw = labelW();
+        var x = parseFloat(line.style.left || '0');
+        wrap.scrollLeft = Math.max(0, x - lw - (wrap.clientWidth - lw) / 2);
+      }
       apply();
     }
-    // the today line is positioned by the main script on load; wait a tick
+    // the main script positions the today line on load; wait two frames
     requestAnimationFrame(function() { requestAnimationFrame(centerToday); });
   })();
 </script>
