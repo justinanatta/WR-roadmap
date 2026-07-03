@@ -2,7 +2,7 @@
   "client_name": "Willie's Remedy",
   "client_key": "wr",
   "html_file": "index.html",
-  "live_url": "",
+  "live_url": "https://wr-roadmap.vercel.app/",
   "review_branch": "draft",
   "jira": {
     "site": "anatta-io.atlassian.net",
