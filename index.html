@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Willie's Remedy Roadmap</title>
-<meta name="description" content="Willie's Remedy roadmap gantt. Collapsible groups, in-flight, proposed, deferred work, milestones, and task-type pills.">
+<meta name="description" content="Willie's Remedy engagement roadmap. Collapsible groups, in-flight, proposed, deferred work, milestones, and task-type pills.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%BF%3C/text%3E%3C/svg%3E">
 <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%BF%3C/text%3E%3C/svg%3E">
 <style>
@@ -124,7 +124,7 @@
   }
   .gantt {
     --label-col: 280px;
-    min-width: 1400px;
+    min-width: 2600px;
     width: 100%;
     position: relative;
     padding-top: 34px; /* headroom for the today flag — must stay inside .gantt-wrap's overflow clip */
@@ -312,7 +312,7 @@
 
   .row-track {
     display: grid;
-    grid-template-columns: repeat(16, 1fr);
+    grid-template-columns: repeat(29, 1fr);
     border-bottom: 1px solid var(--rule);
     background: var(--ground);
     position: relative;
@@ -765,7 +765,7 @@
     h1.title { font-size: 22px; letter-spacing: -0.02em; margin-bottom: 6px; }
     .subtitle { font-size: 12px; line-height: 1.4; }
     .gantt-wrap { margin-top: 24px; }
-    .gantt { --label-col: 160px; min-width: 1000px; }
+    .gantt { --label-col: 160px; min-width: 1900px; }
     .row-label { padding: 6px 8px; font-size: 11px; }
     .row-label.indented { padding-left: 18px; }
     .row-label.sub-indented { padding-left: 28px; font-size: 11px; }
@@ -791,17 +791,17 @@
 <div class="page">
 
   <div class="topbar">
-    <div class="eyebrow">Willie’s Remedy · Q3 2026</div>
+    <div class="eyebrow">Willie’s Remedy · 2026</div>
     <div class="topbar-actions">
       <button class="toggle-btn" id="expandAll" type="button">Expand all</button>
       <button class="toggle-btn" id="collapseAll" type="button">Collapse all</button>
     </div>
-    <div class="topbar-meta">DRAFT v1.0 · Q3 Planning · July – Sept</div>
+    <div class="topbar-meta">DRAFT v2.0 · Full Engagement · April – September</div>
   </div>
 
   <div class="title-block">
-    <h1 class="title">Willie’s Remedy — Q3 2026 Optimization Roadmap</h1>
-    <p class="subtitle">In-flight work, proposed tests, shipped releases, and milestones across the Willie’s Remedy engagement.</p>
+    <h1 class="title">Willie’s Remedy — 2026 Optimization Roadmap</h1>
+    <p class="subtitle">The full engagement, April through September: delivered audits and flows on the left, in-flight sprints at the today line, and the retention and conversion initiatives ahead. Scroll horizontally to travel the timeline.</p>
   </div>
 
   <div class="gantt-wrap">
@@ -831,26 +831,42 @@
            in the CSS (.row-track) AND every cell run below to match.
            ============================================================ -->
 
-      <!-- Sprint band row — real Willie's sprint cadence from Jira (Monday-aligned);
-           Sprints 9–12 are projected forward on the same biweekly cadence -->
       <div class="row sprint-row">
         <div class="row-label">Sprint</div>
         <div class="row-track">
-          <div class="sprint-band prior" style="grid-column: 1 / 2;">Sprint 5<span class="sprint-dates">Jun 8 – Jun 19</span></div>
-          <div class="sprint-band tint" style="grid-column: 2 / 4;">Sprint 6<span class="sprint-dates">Jun 22 – Jul 3</span></div>
-          <div class="sprint-band tint-alt" style="grid-column: 4 / 6;">Sprint 7<span class="sprint-dates">Jul 6 – Jul 17</span></div>
-          <div class="sprint-band tint" style="grid-column: 6 / 8;">Sprint 8<span class="sprint-dates">Jul 20 – Jul 31</span></div>
-          <div class="sprint-band tint-alt" style="grid-column: 8 / 10;">Sprint 9<span class="sprint-dates">Aug 3 – Aug 14</span></div>
-          <div class="sprint-band tint" style="grid-column: 10 / 12;">Sprint 10<span class="sprint-dates">Aug 17 – Aug 28</span></div>
-          <div class="sprint-band tint-alt" style="grid-column: 12 / 14;">Sprint 11<span class="sprint-dates">Aug 31 – Sep 11</span></div>
-          <div class="sprint-band tint" style="grid-column: 14 / 16;">Sprint 12<span class="sprint-dates">Sep 14 – Sep 25</span></div>
-          <div class="sprint-band renewal-band" style="grid-column: 16 / 17;">SOW end</div>
+          <div class="sprint-band prior" style="grid-column: 1 / 5;">Kickoff &amp; Audits<span class="sprint-dates">Mar 16 – Apr 10</span></div>
+          <div class="sprint-band prior" style="grid-column: 5 / 7;">Sprint 1<span class="sprint-dates">Apr 13 – Apr 24</span></div>
+          <div class="sprint-band prior" style="grid-column: 7 / 9;">Sprint 2<span class="sprint-dates">Apr 27 – May 8</span></div>
+          <div class="sprint-band prior" style="grid-column: 9 / 11;">Sprint 3<span class="sprint-dates">May 11 – May 22</span></div>
+          <div class="sprint-band prior" style="grid-column: 11 / 13;">Sprint 4<span class="sprint-dates">May 25 – Jun 5</span></div>
+          <div class="sprint-band prior" style="grid-column: 13 / 15;">Sprint 5<span class="sprint-dates">Jun 8 – Jun 19</span></div>
+          <div class="sprint-band tint" style="grid-column: 15 / 17;">Sprint 6<span class="sprint-dates">Jun 22 – Jul 3</span></div>
+          <div class="sprint-band tint-alt" style="grid-column: 17 / 19;">Sprint 7<span class="sprint-dates">Jul 6 – Jul 17</span></div>
+          <div class="sprint-band tint" style="grid-column: 19 / 21;">Sprint 8<span class="sprint-dates">Jul 20 – Jul 31</span></div>
+          <div class="sprint-band tint-alt" style="grid-column: 21 / 23;">Sprint 9<span class="sprint-dates">Aug 3 – Aug 14</span></div>
+          <div class="sprint-band tint" style="grid-column: 23 / 25;">Sprint 10<span class="sprint-dates">Aug 17 – Aug 28</span></div>
+          <div class="sprint-band tint-alt" style="grid-column: 25 / 27;">Sprint 11<span class="sprint-dates">Aug 31 – Sep 11</span></div>
+          <div class="sprint-band tint" style="grid-column: 27 / 29;">Sprint 12<span class="sprint-dates">Sep 14 – Sep 25</span></div>
+          <div class="sprint-band renewal-band" style="grid-column: 29 / 30;">SOW end</div>
         </div>
       </div>
 
       <div class="row week-row">
         <div class="row-label">Week of</div>
         <div class="row-track">
+          <div class="week-label prior">Mar 16</div>
+          <div class="week-label prior">Mar 23</div>
+          <div class="week-label prior">Mar 30</div>
+          <div class="week-label prior">Apr 6</div>
+          <div class="week-label prior">Apr 13</div>
+          <div class="week-label prior">Apr 20</div>
+          <div class="week-label prior">Apr 27</div>
+          <div class="week-label prior">May 4</div>
+          <div class="week-label prior">May 11</div>
+          <div class="week-label prior">May 18</div>
+          <div class="week-label prior">May 25</div>
+          <div class="week-label prior">Jun 1</div>
+          <div class="week-label prior">Jun 8</div>
           <div class="week-label prior">Jun 15</div>
           <div class="week-label prior">Jun 22</div>
           <div class="week-label">Jun 29</div>
@@ -873,24 +889,36 @@
       <div class="row milestone-row">
         <div class="row-label">Milestones</div>
         <div class="row-track">
-          <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-          <div class="milestone" style="grid-column: 3 / 4;">
+          <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+          <div class="milestone" style="grid-column: 4 / 5;">
+            <div class="diamond release"></div>
+            <div class="milestone-label">Strategy &amp; roadmap aligned · 4/6</div>
+          </div>
+          <div class="milestone" style="grid-column: 9 / 10;">
+            <div class="diamond release"></div>
+            <div class="milestone-label">Production release · 5/14</div>
+          </div>
+          <div class="milestone" style="grid-column: 14 / 15;">
+            <div class="diamond release"></div>
+            <div class="milestone-label">Site re-skin launch · 6/15</div>
+          </div>
+          <div class="milestone" style="grid-column: 16 / 17;">
             <div class="diamond release"></div>
             <div class="milestone-label">Cancellation flow staged · 7/2</div>
           </div>
-          <div class="milestone projected" style="grid-column: 4 / 5;">
+          <div class="milestone projected" style="grid-column: 17 / 18;">
             <div class="diamond release projected"></div>
             <div class="milestone-label">Cancellation flow live · ~7/10</div>
           </div>
-          <div class="milestone projected" style="grid-column: 7 / 8;">
+          <div class="milestone projected" style="grid-column: 20 / 21;">
             <div class="diamond release projected"></div>
             <div class="milestone-label">Tech audit complete · ~7/31</div>
           </div>
-          <div class="milestone projected" style="grid-column: 9 / 10;">
+          <div class="milestone projected" style="grid-column: 22 / 23;">
             <div class="diamond release projected"></div>
             <div class="milestone-label">Gummies launch · ~August</div>
           </div>
-          <div class="milestone renewal" style="grid-column: 16 / 17;">
+          <div class="milestone renewal" style="grid-column: 29 / 30;">
             <div class="diamond renewal"></div>
             <div class="milestone-label">CONTRACT END · 9/30</div>
           </div>
@@ -901,28 +929,48 @@
         <summary class="row group-row">
           <div class="row-label">Tech Audit <a class="group-id" href="https://anatta-io.atlassian.net/browse/WR-114" target="_blank" rel="noopener">WR-114</a></div>
           <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-            <div class="bar implementations epic" style="grid-column: 1 / 8;"><span class="bar-type">IMPL</span>Tech Audit remediation <span class="bar-status">Sprint 5–8</span></div>
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar implementations epic" style="grid-column: 1 / 21;"><span class="bar-type">IMPL</span>Tech Audit remediation <span class="bar-status">Audits → Sprint 8</span></div>
           </div>
         </summary>
         <div class="row">
           <div class="row-label indented">
-            <span class="label-top"><a href="https://anatta-io.atlassian.net/browse/WR-85" target="_blank" rel="noopener">Theme code cleanup — inline scripts and styles</a><a class="id" href="https://anatta-io.atlassian.net/browse/WR-85" target="_blank" rel="noopener">WR-85</a></span>
-            <span class="row-meta">Shipped · Sprint 5–6</span>
+            <span class="label-top"><span>Technical, speed, and SEO audits</span><span class="id">NEW</span></span>
+            <span class="row-meta">Delivered March · seeded the remediation backlog</span>
           </div>
           <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-            <div class="bar implementations done" style="grid-column: 1 / 3;" title="Shipped 6/30"><span class="bar-type">IMPL</span><span class="bar-label">Shipped</span></div>
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar implementations done" style="grid-column: 1 / 5;" title="Audit set delivered 3/19"><span class="bar-type">SPIKE</span><span class="bar-label">Delivered</span></div>
           </div>
         </div>
         <div class="row">
           <div class="row-label indented">
-            <span class="label-top"><a href="https://anatta-io.atlassian.net/browse/WR-90" target="_blank" rel="noopener">Third-party script consolidation</a><a class="id" href="https://anatta-io.atlassian.net/browse/WR-90" target="_blank" rel="noopener">WR-90</a></span>
-            <span class="row-meta">Shipped · Sprint 5</span>
+            <span class="label-top"><a href="https://anatta-io.atlassian.net/browse/WR-82" target="_blank" rel="noopener">Theme structure cleanup — first wave</a><a class="id" href="https://anatta-io.atlassian.net/browse/WR-82" target="_blank" rel="noopener">WR-82</a></span>
+            <span class="row-meta">Five audit fixes shipped in the 5/14 release</span>
           </div>
           <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-            <div class="bar implementations done" style="grid-column: 1 / 2;" title="Shipped 6/17"><span class="bar-type">IMPL</span><span class="bar-label">Shipped</span></div>
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar implementations done" style="grid-column: 5 / 10;" title="Shipped 5/14"><span class="bar-type">IMPL</span><span class="bar-label">Shipped</span></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="row-label indented">
+            <span class="label-top"><a href="https://anatta-io.atlassian.net/browse/WR-90" target="_blank" rel="noopener">Script and code quality — second wave</a><a class="id" href="https://anatta-io.atlassian.net/browse/WR-90" target="_blank" rel="noopener">WR-90</a></span>
+            <span class="row-meta">Shipped 6/17 alongside three companion fixes</span>
+          </div>
+          <div class="row-track">
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar implementations done" style="grid-column: 9 / 14;" title="Shipped 6/17"><span class="bar-type">IMPL</span><span class="bar-label">Shipped</span></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="row-label indented">
+            <span class="label-top"><a href="https://anatta-io.atlassian.net/browse/WR-85" target="_blank" rel="noopener">Theme code cleanup — third wave</a><a class="id" href="https://anatta-io.atlassian.net/browse/WR-85" target="_blank" rel="noopener">WR-85</a></span>
+            <span class="row-meta">Shipped 6/30</span>
+          </div>
+          <div class="row-track">
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar implementations done" style="grid-column: 12 / 16;" title="Shipped 6/30"><span class="bar-type">IMPL</span><span class="bar-label">Shipped</span></div>
           </div>
         </div>
         <div class="row">
@@ -931,8 +979,8 @@
             <span class="row-meta">In development · Sprint 6</span>
           </div>
           <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-            <div class="bar implementations crosses" style="grid-column: 2 / 4; --past: 80%;" title="In development · Sprint 6"><span class="bar-type">IMPL</span><span class="bar-label">Sprint 6</span></div>
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar implementations crosses" style="grid-column: 15 / 17; --past: 80%;" title="In development · Sprint 6"><span class="bar-type">IMPL</span><span class="bar-label">Sprint 6</span></div>
           </div>
         </div>
         <div class="row">
@@ -941,8 +989,8 @@
             <span class="row-meta">In development · Sprint 6</span>
           </div>
           <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-            <div class="bar implementations crosses" style="grid-column: 2 / 4; --past: 80%;" title="In development · Sprint 6"><span class="bar-type">IMPL</span><span class="bar-label">Sprint 6</span></div>
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar implementations crosses" style="grid-column: 15 / 17; --past: 80%;" title="In development · Sprint 6"><span class="bar-type">IMPL</span><span class="bar-label">Sprint 6</span></div>
           </div>
         </div>
         <div class="row">
@@ -951,8 +999,8 @@
             <span class="row-meta">In development · Sprint 6</span>
           </div>
           <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-            <div class="bar implementations crosses" style="grid-column: 2 / 4; --past: 80%;" title="In development · Sprint 6"><span class="bar-type">IMPL</span><span class="bar-label">Sprint 6</span></div>
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar implementations crosses" style="grid-column: 15 / 17; --past: 80%;" title="In development · Sprint 6"><span class="bar-type">IMPL</span><span class="bar-label">Sprint 6</span></div>
           </div>
         </div>
         <div class="row">
@@ -961,8 +1009,8 @@
             <span class="row-meta">Four audit fixes awaiting client review</span>
           </div>
           <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-            <div class="bar implementations" style="grid-column: 3 / 5;" title="Awaiting client review"><span class="bar-type">CONV</span><span class="bar-label">Client review</span></div>
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar implementations" style="grid-column: 16 / 18;" title="Awaiting client review"><span class="bar-type">CONV</span><span class="bar-label">Client review</span></div>
           </div>
         </div>
         <div class="row">
@@ -971,8 +1019,8 @@
             <span class="row-meta">Scheduled · Sprint 7</span>
           </div>
           <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-            <div class="bar implementations" style="grid-column: 4 / 6;" title="Scheduled · Sprint 7"><span class="bar-type">IMPL</span><span class="bar-label">Sprint 7</span></div>
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar implementations" style="grid-column: 17 / 19;" title="Scheduled · Sprint 7"><span class="bar-type">IMPL</span><span class="bar-label">Sprint 7</span></div>
           </div>
         </div>
         <div class="row">
@@ -981,8 +1029,8 @@
             <span class="row-meta">Scheduled · Sprint 7</span>
           </div>
           <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-            <div class="bar implementations" style="grid-column: 4 / 6;" title="Scheduled · Sprint 7"><span class="bar-type">IMPL</span><span class="bar-label">Sprint 7</span></div>
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar implementations" style="grid-column: 17 / 19;" title="Scheduled · Sprint 7"><span class="bar-type">IMPL</span><span class="bar-label">Sprint 7</span></div>
           </div>
         </div>
         <div class="row">
@@ -991,8 +1039,8 @@
             <span class="row-meta">Scheduled · Sprint 8</span>
           </div>
           <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-            <div class="bar implementations" style="grid-column: 6 / 8;" title="Scheduled · Sprint 8"><span class="bar-type">IMPL</span><span class="bar-label">Sprint 8</span></div>
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar implementations" style="grid-column: 19 / 21;" title="Scheduled · Sprint 8"><span class="bar-type">IMPL</span><span class="bar-label">Sprint 8</span></div>
           </div>
         </div>
       </details>
@@ -1001,28 +1049,48 @@
         <summary class="row group-row">
           <div class="row-label">Subscription Portal <a class="group-id" href="https://anatta-io.atlassian.net/browse/WR-111" target="_blank" rel="noopener">WR-111</a></div>
           <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-            <div class="bar cart epic" style="grid-column: 1 / 6;"><span class="bar-type">IMPL</span>Cancellation &amp; retention flows <span class="bar-status">Sprint 4–7</span></div>
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar cart epic" style="grid-column: 3 / 19;"><span class="bar-type">IMPL</span>Cancellation &amp; retention flows <span class="bar-status">April → Sprint 7</span></div>
           </div>
         </summary>
         <div class="row">
           <div class="row-label indented">
-            <span class="label-top"><a href="https://anatta-io.atlassian.net/browse/WR-159" target="_blank" rel="noopener">Cancellation flow updates — six reason paths</a><a class="id" href="https://anatta-io.atlassian.net/browse/WR-159" target="_blank" rel="noopener">WR-159</a></span>
-            <span class="row-meta">Built and QA cleared · production deploy pending approval</span>
+            <span class="label-top"><span>Portal payments unblocked on staging</span><span class="id">NEW</span></span>
+            <span class="row-meta">Resolved 4/23 · unblocked the cancellation flow build</span>
           </div>
           <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-            <div class="bar cart done" style="grid-column: 1 / 3;" title="Staged for production · pending client approval"><span class="bar-type">IMPL</span><span class="bar-label">Staged</span></div>
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar cart done" style="grid-column: 3 / 7;" title="Resolved 4/23"><span class="bar-type">IMPL</span><span class="bar-label">Resolved</span></div>
           </div>
         </div>
         <div class="row">
           <div class="row-label indented">
-            <span class="label-top"><a href="https://anatta-io.atlassian.net/browse/WR-172" target="_blank" rel="noopener">Pause and reactivation fixes</a><a class="id" href="https://anatta-io.atlassian.net/browse/WR-172" target="_blank" rel="noopener">WR-172</a></span>
-            <span class="row-meta">Shipped with portal bug set · Sprint 5</span>
+            <span class="label-top"><span>Platform constraints mapped — flows redesigned</span><span class="id">NEW</span></span>
+            <span class="row-meta">Cancellation flows re-scoped into six reason paths (May)</span>
           </div>
           <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-            <div class="bar cart done" style="grid-column: 1 / 3;" title="Shipped 6/16"><span class="bar-type">BUG</span><span class="bar-label">Shipped</span></div>
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar cart done" style="grid-column: 8 / 12;" title="Re-scoped from the updated flow designs"><span class="bar-type">SPIKE</span><span class="bar-label">Re-scoped</span></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="row-label indented">
+            <span class="label-top"><a href="https://anatta-io.atlassian.net/browse/WR-159" target="_blank" rel="noopener">Cancellation flows — six reason paths built</a><a class="id" href="https://anatta-io.atlassian.net/browse/WR-159" target="_blank" rel="noopener">WR-159</a></span>
+            <span class="row-meta">Dev complete, QA cleared, staged 6/11 · production deploy pending approval</span>
+          </div>
+          <div class="row-track">
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar cart done" style="grid-column: 11 / 15;" title="Staged for production, pending client approval"><span class="bar-type">IMPL</span><span class="bar-label">Staged</span></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="row-label indented">
+            <span class="label-top"><a href="https://anatta-io.atlassian.net/browse/WR-172" target="_blank" rel="noopener">Portal bug set</a><a class="id" href="https://anatta-io.atlassian.net/browse/WR-172" target="_blank" rel="noopener">WR-172</a></span>
+            <span class="row-meta">Pause and reactivation fixes shipped mid-June</span>
+          </div>
+          <div class="row-track">
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar cart done" style="grid-column: 13 / 15;" title="Shipped 6/16"><span class="bar-type">BUG</span><span class="bar-label">Shipped</span></div>
           </div>
         </div>
         <div class="row">
@@ -1031,8 +1099,8 @@
             <span class="row-meta">Swap, pause, and frequency updates reflect immediately</span>
           </div>
           <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-            <div class="bar cart crosses" style="grid-column: 2 / 4; --past: 80%;" title="In development · Sprint 6"><span class="bar-type">BUG</span><span class="bar-label">Sprint 6</span></div>
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar cart crosses" style="grid-column: 15 / 17; --past: 80%;" title="In development · Sprint 6"><span class="bar-type">BUG</span><span class="bar-label">Sprint 6</span></div>
           </div>
         </div>
         <div class="row">
@@ -1041,8 +1109,8 @@
             <span class="row-meta">Awaiting client feedback and approval to deploy</span>
           </div>
           <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-            <div class="bar cart" style="grid-column: 3 / 5;" title="Awaiting client approval to deploy"><span class="bar-type">CONV</span><span class="bar-label">Approval</span></div>
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar cart" style="grid-column: 16 / 18;" title="Awaiting client approval to deploy"><span class="bar-type">CONV</span><span class="bar-label">Approval</span></div>
           </div>
         </div>
         <div class="row">
@@ -1051,8 +1119,8 @@
             <span class="row-meta">July initiative · per roadmap alignment</span>
           </div>
           <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-            <div class="bar proposed" style="grid-column: 4 / 8;" title="Make skip, swap, and pause options intuitive"><span class="bar-type">IMPL</span><span class="bar-label">July</span></div>
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar proposed" style="grid-column: 17 / 21;" title="Make skip, swap, and pause options intuitive"><span class="bar-type">IMPL</span><span class="bar-label">July</span></div>
           </div>
         </div>
       </details>
@@ -1061,37 +1129,47 @@
         <summary class="row group-row">
           <div class="row-label">UX Optimization <a class="group-id" href="https://anatta-io.atlassian.net/browse/WR-7" target="_blank" rel="noopener">WR-7</a></div>
           <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
           </div>
         </summary>
+        <div class="row">
+          <div class="row-label indented">
+            <span class="label-top"><a href="https://anatta-io.atlassian.net/browse/WR-9" target="_blank" rel="noopener">Header and navigation design set</a><a class="id" href="https://anatta-io.atlassian.net/browse/WR-9" target="_blank" rel="noopener">WR-9</a></span>
+            <span class="row-meta">Four designs approved 4/20</span>
+          </div>
+          <div class="row-track">
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar plp done" style="grid-column: 4 / 7;" title="Approved 4/20"><span class="bar-type">IMPL</span><span class="bar-label">Approved</span></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="row-label indented">
+            <span class="label-top"><a href="https://anatta-io.atlassian.net/browse/WR-138" target="_blank" rel="noopener">Homepage value proposition above the fold</a><a class="id" href="https://anatta-io.atlassian.net/browse/WR-138" target="_blank" rel="noopener">WR-138</a></span>
+            <span class="row-meta">Design approved 4/29</span>
+          </div>
+          <div class="row-track">
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar plp done" style="grid-column: 6 / 8;" title="Approved 4/29"><span class="bar-type">IMPL</span><span class="bar-label">Approved</span></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="row-label indented">
+            <span class="label-top"><span>Design pause for the site re-skin</span><span class="id">NEW</span></span>
+            <span class="row-meta">Agreed sequencing: partner re-skin ships first, designs resume after</span>
+          </div>
+          <div class="row-track">
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar plp done" style="grid-column: 10 / 15;" title="Sequencing decision"><span class="bar-type">CONV</span><span class="bar-label">Decision</span></div>
+          </div>
+        </div>
         <div class="row">
           <div class="row-label indented">
             <span class="label-top"><a href="https://anatta-io.atlassian.net/browse/WR-20" target="_blank" rel="noopener">Product page information hierarchy</a><a class="id" href="https://anatta-io.atlassian.net/browse/WR-20" target="_blank" rel="noopener">WR-20</a></span>
             <span class="row-meta">Design in progress · builds follow the site re-skin</span>
           </div>
           <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-            <div class="bar plp crosses" style="grid-column: 3 / 6; --past: 21%;" title="Design in progress"><span class="bar-type">IMPL</span><span class="bar-label">Design</span></div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="row-label indented">
-            <span class="label-top"><a href="https://anatta-io.atlassian.net/browse/WR-26" target="_blank" rel="noopener">Navigation dropdown refinements</a><a class="id" href="https://anatta-io.atlassian.net/browse/WR-26" target="_blank" rel="noopener">WR-26</a></span>
-            <span class="row-meta">Queued · resumes after re-skin launch</span>
-          </div>
-          <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-            <div class="bar proposed" style="grid-column: 4 / 6;" title="Queued, resumes after re-skin launch"><span class="bar-type">IMPL</span><span class="bar-label">After re-skin</span></div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="row-label indented">
-            <span class="label-top"><a href="https://anatta-io.atlassian.net/browse/WR-22" target="_blank" rel="noopener">Mobile navigation redesign</a><a class="id" href="https://anatta-io.atlassian.net/browse/WR-22" target="_blank" rel="noopener">WR-22</a></span>
-            <span class="row-meta">Queued · resumes after re-skin launch</span>
-          </div>
-          <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-            <div class="bar proposed" style="grid-column: 5 / 8;" title="Queued, resumes after re-skin launch"><span class="bar-type">IMPL</span><span class="bar-label">After re-skin</span></div>
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar plp crosses" style="grid-column: 16 / 19; --past: 21%;" title="Design in progress"><span class="bar-type">IMPL</span><span class="bar-label">Design</span></div>
           </div>
         </div>
         <div class="row">
@@ -1100,8 +1178,8 @@
             <span class="row-meta">Sticky add-to-cart, top-rated review sort, disclaimer relocation · July</span>
           </div>
           <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-            <div class="bar proposed" style="grid-column: 4 / 7;" title="Sticky add-to-cart on mobile scroll, default review sort to top rated, disclaimer moved below reviews"><span class="bar-type">IMPL</span><span class="bar-label">July</span></div>
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar proposed" style="grid-column: 17 / 20;" title="Sticky add-to-cart on mobile scroll, default review sort to top rated, disclaimer moved below reviews"><span class="bar-type">IMPL</span><span class="bar-label">July</span></div>
           </div>
         </div>
         <div class="row">
@@ -1110,8 +1188,28 @@
             <span class="row-meta">Start-low guidance at the variant selector · pending scheduling</span>
           </div>
           <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-            <div class="bar proposed" style="grid-column: 5 / 8;" title="Tolerance-based guidance and per-serving cost near Add to Cart"><span class="bar-type">IMPL</span><span class="bar-label">Pending scheduling</span></div>
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar proposed" style="grid-column: 18 / 21;" title="Tolerance-based guidance and per-serving cost near Add to Cart"><span class="bar-type">IMPL</span><span class="bar-label">Pending scheduling</span></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="row-label indented">
+            <span class="label-top"><a href="https://anatta-io.atlassian.net/browse/WR-26" target="_blank" rel="noopener">Navigation dropdown refinements</a><a class="id" href="https://anatta-io.atlassian.net/browse/WR-26" target="_blank" rel="noopener">WR-26</a></span>
+            <span class="row-meta">Queued · resumes after re-skin launch</span>
+          </div>
+          <div class="row-track">
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar proposed" style="grid-column: 17 / 19;" title="Queued, resumes after re-skin launch"><span class="bar-type">IMPL</span><span class="bar-label">After re-skin</span></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="row-label indented">
+            <span class="label-top"><a href="https://anatta-io.atlassian.net/browse/WR-22" target="_blank" rel="noopener">Mobile navigation redesign</a><a class="id" href="https://anatta-io.atlassian.net/browse/WR-22" target="_blank" rel="noopener">WR-22</a></span>
+            <span class="row-meta">Queued · resumes after re-skin launch</span>
+          </div>
+          <div class="row-track">
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar proposed" style="grid-column: 18 / 21;" title="Queued, resumes after re-skin launch"><span class="bar-type">IMPL</span><span class="bar-label">After re-skin</span></div>
           </div>
         </div>
       </details>
@@ -1120,7 +1218,7 @@
         <summary class="row group-row">
           <div class="row-label">Site Speed <a class="group-id" href="https://anatta-io.atlassian.net/browse/WR-112" target="_blank" rel="noopener">WR-112</a></div>
           <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
           </div>
         </summary>
         <div class="row">
@@ -1129,8 +1227,8 @@
             <span class="row-meta">Queued · pending scheduling</span>
           </div>
           <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-            <div class="bar proposed" style="grid-column: 4 / 6;" title="Queued, not yet scheduled"><span class="bar-type">IMPL</span><span class="bar-label">Pending scheduling</span></div>
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar proposed" style="grid-column: 17 / 19;" title="Queued, not yet scheduled"><span class="bar-type">IMPL</span><span class="bar-label">Pending scheduling</span></div>
           </div>
         </div>
         <div class="row">
@@ -1139,8 +1237,8 @@
             <span class="row-meta">Queued · pending scheduling</span>
           </div>
           <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-            <div class="bar proposed" style="grid-column: 5 / 8;" title="Queued, not yet scheduled"><span class="bar-type">IMPL</span><span class="bar-label">Pending scheduling</span></div>
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar proposed" style="grid-column: 18 / 21;" title="Queued, not yet scheduled"><span class="bar-type">IMPL</span><span class="bar-label">Pending scheduling</span></div>
           </div>
         </div>
       </details>
@@ -1149,17 +1247,37 @@
         <summary class="row group-row">
           <div class="row-label">Research &amp; CRO <a class="group-id" href="https://anatta-io.atlassian.net/browse/WR-5" target="_blank" rel="noopener">WR-5</a></div>
           <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
           </div>
         </summary>
         <div class="row">
           <div class="row-label indented">
-            <span class="label-top"><span>Subscriber research analysis</span><span class="id">NEW</span></span>
-            <span class="row-meta">Qualitative sessions complete · analysis wrapping</span>
+            <span class="label-top"><span>Email program audit</span><span class="id">NEW</span></span>
+            <span class="row-meta">Findings and strategy recommendations delivered (April)</span>
           </div>
           <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-            <div class="bar experiments crosses" style="grid-column: 1 / 4; --past: 85%;" title="Analysis in progress"><span class="bar-type">SPIKE</span><span class="bar-label">Analysis</span></div>
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar experiments done" style="grid-column: 2 / 6;" title="Delivered April"><span class="bar-type">SPIKE</span><span class="bar-label">Delivered</span></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="row-label indented">
+            <span class="label-top"><span>Subscriber research — surveys, interviews, polls</span><span class="id">NEW</span></span>
+            <span class="row-meta">Quantitative readout 6/12 · qualitative readout 7/2</span>
+          </div>
+          <div class="row-track">
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar experiments done" style="grid-column: 6 / 17;" title="Multi-track research program"><span class="bar-type">SPIKE</span><span class="bar-label">Research</span></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="row-label indented">
+            <span class="label-top"><span>Pre-re-skin site benchmark</span><span class="id">NEW</span></span>
+            <span class="row-meta">Baseline captured ahead of the 6/15 launch</span>
+          </div>
+          <div class="row-track">
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar experiments done" style="grid-column: 12 / 14;" title="Baseline captured"><span class="bar-type">SPIKE</span><span class="bar-label">Baseline</span></div>
           </div>
         </div>
         <div class="row">
@@ -1168,8 +1286,8 @@
             <span class="row-meta">Thirty days after re-skin launch · two weeks of data minimum</span>
           </div>
           <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-            <div class="bar proposed" style="grid-column: 4 / 7;" title="Benchmark window follows the re-skin launch"><span class="bar-type">SPIKE</span><span class="bar-label">After re-skin</span></div>
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar proposed" style="grid-column: 17 / 20;" title="Benchmark window follows the re-skin launch"><span class="bar-type">SPIKE</span><span class="bar-label">After re-skin</span></div>
           </div>
         </div>
         <div class="row">
@@ -1178,8 +1296,8 @@
             <span class="row-meta">Platform selected · first test set defined for August</span>
           </div>
           <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-            <div class="bar proposed" style="grid-column: 8 / 12;" title="First tests: cadence options, trust badges, one-time purchase default"><span class="bar-type">TEST</span><span class="bar-label">August tests</span></div>
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar proposed" style="grid-column: 21 / 25;" title="First tests: cadence options, trust badges, one-time purchase default"><span class="bar-type">TEST</span><span class="bar-label">August tests</span></div>
           </div>
         </div>
       </details>
@@ -1188,17 +1306,27 @@
         <summary class="row group-row">
           <div class="row-label">Quality &amp; Bug Fixes</div>
           <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
           </div>
         </summary>
+        <div class="row">
+          <div class="row-label indented">
+            <span class="label-top"><a href="https://anatta-io.atlassian.net/browse/WR-144" target="_blank" rel="noopener">Re-skin QA fixes</a><a class="id" href="https://anatta-io.atlassian.net/browse/WR-144" target="_blank" rel="noopener">WR-144</a></span>
+            <span class="row-meta">Three fixes shipped 5/12</span>
+          </div>
+          <div class="row-track">
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar compliance done" style="grid-column: 8 / 10;" title="Shipped 5/12"><span class="bar-type">BUG</span><span class="bar-label">Shipped</span></div>
+          </div>
+        </div>
         <div class="row">
           <div class="row-label indented">
             <span class="label-top"><a href="https://anatta-io.atlassian.net/browse/WR-187" target="_blank" rel="noopener">Product bundle page fix</a><a class="id" href="https://anatta-io.atlassian.net/browse/WR-187" target="_blank" rel="noopener">WR-187</a></span>
             <span class="row-meta">Live issue · carrying into Sprint 7</span>
           </div>
           <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-            <div class="bar compliance crosses" style="grid-column: 3 / 5; --past: 32%;" title="Live issue in progress"><span class="bar-type">BUG</span><span class="bar-label">In progress</span></div>
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar compliance crosses" style="grid-column: 16 / 18; --past: 32%;" title="Live issue in progress"><span class="bar-type">BUG</span><span class="bar-label">In progress</span></div>
           </div>
         </div>
         <div class="row">
@@ -1207,8 +1335,8 @@
             <span class="row-meta">Queued with mobile polish set</span>
           </div>
           <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-            <div class="bar proposed" style="grid-column: 4 / 6;" title="Queued, not yet scheduled"><span class="bar-type">BUG</span><span class="bar-label">Pending scheduling</span></div>
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar proposed" style="grid-column: 17 / 19;" title="Queued, not yet scheduled"><span class="bar-type">BUG</span><span class="bar-label">Pending scheduling</span></div>
           </div>
         </div>
         <div class="row">
@@ -1217,8 +1345,8 @@
             <span class="row-meta">Queued with mobile polish set</span>
           </div>
           <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-            <div class="bar proposed" style="grid-column: 4 / 6;" title="Queued, not yet scheduled"><span class="bar-type">BUG</span><span class="bar-label">Pending scheduling</span></div>
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar proposed" style="grid-column: 17 / 19;" title="Queued, not yet scheduled"><span class="bar-type">BUG</span><span class="bar-label">Pending scheduling</span></div>
           </div>
         </div>
       </details>
@@ -1227,18 +1355,28 @@
         <summary class="row group-row">
           <div class="row-label" style="color: var(--signal);">Proposed adds <span class="group-id">upcoming workstreams</span></div>
           <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-            <div class="bar proposed epic" style="grid-column: 7 / 16;"><span class="bar-type">IMPL</span>Lifecycle and retention sequences · per roadmap alignment</div>
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar proposed epic" style="grid-column: 20 / 29;"><span class="bar-type">IMPL</span>Lifecycle and retention sequences · per roadmap alignment</div>
           </div>
         </summary>
+        <div class="row">
+          <div class="row-label indented">
+            <span class="label-top"><span>30-day activation sequence</span><span class="id">NEW</span></span>
+            <span class="row-meta">Touchpoints at day 1, 14, and 28 to drive a second order · July</span>
+          </div>
+          <div class="row-track">
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar proposed" style="grid-column: 18 / 21;" title="New-subscriber activation sequence"><span class="bar-type">IMPL</span><span class="bar-label">July</span></div>
+          </div>
+        </div>
         <div class="row">
           <div class="row-label indented">
             <span class="label-top"><a href="https://anatta-io.atlassian.net/browse/WR-59" target="_blank" rel="noopener">SEO and structured data quick wins</a><a class="id" href="https://anatta-io.atlassian.net/browse/WR-59" target="_blank" rel="noopener">WR-59</a></span>
             <span class="row-meta">Bundle of small fixes · pending scheduling</span>
           </div>
           <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-            <div class="bar proposed" style="grid-column: 7 / 9;" title="Pending scheduling"><span class="bar-type">IMPL</span><span class="bar-label">Quick wins</span></div>
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar proposed" style="grid-column: 20 / 22;" title="Pending scheduling"><span class="bar-type">IMPL</span><span class="bar-label">Quick wins</span></div>
           </div>
         </div>
         <div class="row">
@@ -1247,18 +1385,8 @@
             <span class="row-meta">Pending alignment</span>
           </div>
           <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-            <div class="bar proposed" style="grid-column: 7 / 11;" title="Pending alignment"><span class="bar-type">IMPL</span><span class="bar-label">Pending alignment</span></div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="row-label indented">
-            <span class="label-top"><span>30-day activation sequence</span><span class="id">NEW</span></span>
-            <span class="row-meta">Touchpoints at day 1, 14, and 28 to drive a second order · July</span>
-          </div>
-          <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-            <div class="bar proposed" style="grid-column: 5 / 8;" title="New-subscriber activation sequence"><span class="bar-type">IMPL</span><span class="bar-label">July</span></div>
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar proposed" style="grid-column: 20 / 24;" title="Pending alignment"><span class="bar-type">IMPL</span><span class="bar-label">Pending alignment</span></div>
           </div>
         </div>
         <div class="row">
@@ -1267,8 +1395,8 @@
             <span class="row-meta">Gift bundle and product page section with gift note option · August</span>
           </div>
           <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-            <div class="bar proposed" style="grid-column: 8 / 10;" title="Gifting entry point"><span class="bar-type">IMPL</span><span class="bar-label">August</span></div>
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar proposed" style="grid-column: 21 / 23;" title="Gifting entry point"><span class="bar-type">IMPL</span><span class="bar-label">August</span></div>
           </div>
         </div>
         <div class="row">
@@ -1277,8 +1405,8 @@
             <span class="row-meta">Time-limited offers during the pause window · August</span>
           </div>
           <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-            <div class="bar proposed" style="grid-column: 9 / 12;" title="Pause reactivation sequence"><span class="bar-type">IMPL</span><span class="bar-label">August</span></div>
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar proposed" style="grid-column: 22 / 25;" title="Pause reactivation sequence"><span class="bar-type">IMPL</span><span class="bar-label">August</span></div>
           </div>
         </div>
         <div class="row">
@@ -1287,8 +1415,8 @@
             <span class="row-meta">Automated recovery of failed-payment churn · September</span>
           </div>
           <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-            <div class="bar proposed" style="grid-column: 12 / 15;" title="Payment recovery and dunning"><span class="bar-type">IMPL</span><span class="bar-label">September</span></div>
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar proposed" style="grid-column: 25 / 28;" title="Payment recovery and dunning"><span class="bar-type">IMPL</span><span class="bar-label">September</span></div>
           </div>
         </div>
         <div class="row">
@@ -1297,8 +1425,8 @@
             <span class="row-meta">Timed outreach ahead of the renewal window · September</span>
           </div>
           <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-            <div class="bar proposed" style="grid-column: 12 / 15;" title="Targeted messaging before the month-six renewal window"><span class="bar-type">IMPL</span><span class="bar-label">September</span></div>
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar proposed" style="grid-column: 25 / 28;" title="Targeted messaging before the month-six renewal window"><span class="bar-type">IMPL</span><span class="bar-label">September</span></div>
           </div>
         </div>
         <div class="row">
@@ -1307,8 +1435,8 @@
             <span class="row-meta">Re-engagement for lapsed subscribers · strategy candidate</span>
           </div>
           <div class="row-track">
-            <div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-            <div class="bar proposed" style="grid-column: 13 / 16;" title="Targeted offers for lapsed subscribers, by cancellation reason"><span class="bar-type">IMPL</span><span class="bar-label">Candidate</span></div>
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="bar proposed" style="grid-column: 26 / 29;" title="Targeted offers for lapsed subscribers, by cancellation reason"><span class="bar-type">IMPL</span><span class="bar-label">Candidate</span></div>
           </div>
         </div>
       </details>
@@ -1350,15 +1478,15 @@
   </div>
 
   <footer>
-    Working draft. v1.0 · Willie’s Remedy × Anatta · Sprint windows and release dates are projected. Click any row title to open in Jira. <a href="q2-2026.html">Q2 2026 review</a>.
+    Working draft. v2.0 · Willie’s Remedy × Anatta · Sprint windows and release dates are projected. Click any row title to open in Jira.
   </footer>
 
 </div>
 
 <script>
   (function() {
-    var ganttStart = new Date('2026-06-15T00:00:00'); // Monday of the FIRST column (first carryover week)
-    var ganttEnd = new Date('2026-10-05T00:00:00'); // end of the LAST column (Q4 horizon week)
+    var ganttStart = new Date('2026-03-16T00:00:00'); // Monday of the FIRST column
+    var ganttEnd = new Date('2026-10-05T00:00:00'); // end of the LAST column (SOW-end week)
 
     var MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
