@@ -1,0 +1,19 @@
+{
+  "client_name": "Willie's Remedy",
+  "client_key": "wr",
+  "html_file": "index.html",
+  "live_url": "",
+  "review_branch": "draft",
+  "jira": {
+    "site": "anatta-io.atlassian.net",
+    "project": "WR",
+    "visible_marker": "label:roadmap",
+    "lanes": {
+      "implementations": "WR-114",
+      "cart": "WR-111",
+      "plp": "WR-7",
+      "promotions": "WR-112",
+      "experiments": "WR-5"
+    }
+  }
+}
