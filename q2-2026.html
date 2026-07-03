@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Willie's Remedy — Q2 2026 Review</title>
+<meta name="description" content="Willie's Remedy Q2 2026 delivered-work review. Collapsible groups, in-flight, proposed, deferred work, milestones, and task-type pills.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%BF%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%BF%3C/text%3E%3C/svg%3E">
+<style>
+  :root {
+    --ground: #F4F6F8;
+    --ground-elev: #E9ECEF;
+    --ink: #1A1F1A;
+    --ink-mid: #4D5249;
+    --ink-mute: #8B8D7E;
+    --rule: #C4C0B0;
+    --rule-strong: #1A1F1A;
+    --signal: #8B3D14;        /* Deep vermillion */
+    --counter: #1F5E45;       /* Deep bluish green */
+    --today: #64748B;         /* Soft slate, Asana-style */
+
+    /* Dark muted Okabe-Ito: same hue families for colorblind distinguishability, darker luminance for white-text contrast (WCAG AA+) */
+    --cart: #2C5266;          /* Dark teal-blue */
+    --plp: #7A5520;           /* Dark amber */
+    --experiments: #1F5E45;   /* Dark bluish green */
+    --implementations: #614258; /* Dark plum */
+    --compliance: #3D5F73;    /* Dark slate blue */
+    --promotions: #1F5D5D;    /* Dark teal */
+
+    --font: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  * { font-family: var(--font); }
+
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+    padding: 32px 48px 56px;
+    margin: 0;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .page { max-width: 1720px; margin: 0 auto; }
+
+  .topbar {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 28px;
+  }
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-mid);
+  }
+  .topbar-meta {
+    font-size: 11px;
+    color: var(--ink-mute);
+    letter-spacing: 0.04em;
+    font-weight: 500;
+  }
+  .topbar-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-left: auto;
+  }
+  .toggle-btn {
+    background: transparent;
+    border: 1px solid var(--rule);
+    color: var(--ink-mid);
+    padding: 4px 10px;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 2px;
+    font-family: var(--font);
+  }
+  .toggle-btn:hover {
+    background: var(--ground-elev);
+    color: var(--ink);
+  }
+
+  .title-block { margin-bottom: 40px; }
+  h1.title {
+    font-size: clamp(26px, 3.4vw, 34px);
+    line-height: 1.1;
+    letter-spacing: -0.024em;
+    font-weight: 500;
+    margin: 0 0 10px;
+    text-wrap: balance;
+  }
+  h1.title em {
+    color: var(--signal);
+    font-style: normal;
+    font-weight: 500;
+  }
+  .subtitle {
+    font-size: 14px;
+    color: var(--ink-mid);
+    max-width: 76ch;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .gantt-wrap {
+    overflow-x: auto;
+    border-top: 1.5px solid var(--rule-strong);
+    border-bottom: 1.5px solid var(--rule-strong);
+    background: var(--ground);
+    margin-top: 12px;
+  }
+  .gantt {
+    --label-col: 280px;
+    min-width: 1400px;
+    width: 100%;
+    position: relative;
+    padding-top: 34px; /* headroom for the today flag — must stay inside .gantt-wrap's overflow clip */
+  }
+
+  .col-resizer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--label-col);
+    width: 9px;
+    margin-left: -4px;
+    cursor: col-resize;
+    z-index: 20;
+    background: transparent;
+    touch-action: none;
+  }
+  .col-resizer::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 3px;
+    height: 36px;
+    background: var(--rule);
+    border-radius: 2px;
+    opacity: 0;
+    transition: opacity 0.15s, background 0.15s;
+  }
+  .col-resizer:hover::after,
+  .col-resizer.dragging::after {
+    opacity: 1;
+    background: var(--ink-mid);
+  }
+
+  /* TODAY LINE */
+  .today-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--today);
+    z-index: 10;
+    pointer-events: none;
+    display: none;
+    opacity: 1;
+  }
+  .today-flag {
+    position: absolute;
+    top: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--today);
+    color: white;
+    padding: 4px 9px 3px;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-weight: 600;
+    border-radius: 2px;
+  }
+  .today-flag::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid var(--today);
+  }
+  .today-flag-date {
+    font-weight: 700;
+    letter-spacing: 0.06em;
+  }
+
+  details.group { display: block; }
+  summary.row {
+    list-style: none;
+    cursor: pointer;
+  }
+  summary.row::-webkit-details-marker { display: none; }
+  summary.row::marker { display: none; }
+  summary.row:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: -2px;
+  }
+  details > summary .row-label::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--ink-mid);
+    margin-right: 10px;
+    flex-shrink: 0;
+    transition: transform 0.15s ease;
+    transform-origin: 50% 30%;
+  }
+  details:not([open]) > summary .row-label::before {
+    transform: rotate(-90deg);
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: var(--label-col, 280px) 1fr;
+  }
+  .row-label {
+    padding: 8px 16px;
+    font-size: 13px;
+    color: var(--ink);
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    background: var(--ground);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+    line-height: 1.3;
+  }
+  .row-label .label-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    min-width: 0;
+  }
+  .row-label .label-top > a,
+  .row-label .label-top > span:not(.id) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
+  }
+  .row-label .row-meta {
+    font-size: 10.5px;
+    color: var(--ink-mute);
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: 0.01em;
+  }
+  .row-label.indented { padding-left: 32px; }
+  .row-label.sub-indented { padding-left: 48px; font-size: 12px; color: var(--ink-mid); }
+  .row-label.sub-indented .label-top::before {
+    content: '↳';
+    color: var(--ink-mute);
+    margin-right: 4px;
+  }
+
+  /* Link styling for clickable row labels */
+  .row-label a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .row-label a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--ink-mute);
+    text-underline-offset: 3px;
+  }
+  .row-label a:focus-visible {
+    outline: 1.5px solid var(--ink);
+    outline-offset: 2px;
+    border-radius: 1px;
+  }
+
+  .row-label .id,
+  .row-label a.id {
+    font-size: 11px;
+    color: var(--ink-mute);
+    white-space: nowrap;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    margin-left: auto;
+  }
+  .row-label a.id:hover {
+    color: var(--ink);
+  }
+
+  .row-track {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    border-bottom: 1px solid var(--rule);
+    background: var(--ground);
+    position: relative;
+    min-height: 48px;
+  }
+  .cell {
+    border-right: 1px solid var(--rule);
+    grid-row: 1;
+  }
+  .cell:last-child { border-right: none; }
+  .cell.prior { background: rgba(74, 80, 75, 0.11); }
+
+  /* Reset to single-row flex for special header rows */
+  .sprint-row .row-label,
+  .week-row .row-label,
+  .milestone-row .row-label,
+  .group-row .row-label {
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* SPRINT BAND ROW */
+  .sprint-row .row-label {
+    background: var(--ground-elev);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-mid);
+    font-weight: 600;
+  }
+  .sprint-row .row-track {
+    background: var(--ground-elev);
+    min-height: 42px;
+  }
+  .sprint-band {
+    grid-row: 1;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 4px;
+    text-align: center;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 1.2;
+    color: var(--ink-mid);
+    border-right: 1px solid var(--rule);
+    font-weight: 600;
+  }
+  .sprint-dates {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    opacity: 0.85;
+    white-space: nowrap;
+  }
+  .sprint-band.prior {
+    background: rgba(74, 80, 75, 0.16);
+    color: var(--ink-mid);
+  }
+  .sprint-band.tint { background: rgba(74, 80, 75, 0.08); }
+  .sprint-band.tint-alt { background: rgba(74, 80, 75, 0.14); }
+  .sprint-band.renewal-band {
+    background: rgba(122, 41, 36, 0.12);
+    color: var(--signal);
+    font-weight: 700;
+    border-right: none;
+  }
+
+  /* WEEK LABEL ROW */
+  .week-row .row-label {
+    background: var(--ground);
+    border-bottom: 1.5px solid var(--ink);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-mid);
+    font-weight: 600;
+  }
+  .week-row .row-track {
+    background: var(--ground);
+    border-bottom: 1.5px solid var(--ink);
+    min-height: 32px;
+  }
+  .week-label {
+    grid-row: 1;
+    font-size: 10px;
+    color: var(--ink-mid);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid var(--rule);
+    letter-spacing: 0.04em;
+    font-weight: 500;
+  }
+  .week-label.prior {
+    color: var(--ink-mid);
+    background: rgba(74, 80, 75, 0.11);
+  }
+  .week-label:last-child { border-right: none; }
+
+  /* MILESTONE ROW */
+  .milestone-row .row-label {
+    background: var(--ground);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-mid);
+    font-weight: 600;
+  }
+  .milestone-row .row-track {
+    min-height: 52px;
+    align-items: center;
+  }
+  .milestone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 6px 4px;
+  }
+  .diamond {
+    width: 10px;
+    height: 10px;
+    background: var(--ink);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+  .diamond.release { background: var(--counter); }
+  .diamond.release.projected {
+    background: var(--ground);
+    border: 1.5px solid var(--counter);
+  }
+  .diamond.holiday { background: var(--ink-mute); }
+  .diamond.renewal {
+    background: var(--signal);
+    width: 14px;
+    height: 14px;
+  }
+  .milestone-label {
+    font-size: 9px;
+    color: var(--ink-mid);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.2;
+    font-weight: 500;
+  }
+  .milestone.projected .milestone-label {
+    color: var(--ink-mute);
+    font-style: italic;
+  }
+  .milestone.renewal .milestone-label {
+    color: var(--signal);
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+  }
+
+  /* GROUP HEADER ROW */
+  .group-row .row-label {
+    background: var(--ground-elev);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink);
+    font-weight: 700;
+    padding: 14px 16px 12px;
+  }
+  .group-row .row-track {
+    background: var(--ground-elev);
+    min-height: 44px;
+  }
+  .group-row .row-track,
+  .group-row .row-label {
+    border-bottom: 1px solid var(--rule);
+  }
+  .group-id,
+  a.group-id {
+    font-size: 10px;
+    color: var(--ink-mute);
+    text-transform: none;
+    letter-spacing: 0.02em;
+    font-weight: 500;
+    margin-left: 6px;
+  }
+  a.group-id:hover { color: var(--ink); }
+  .group-id.muted { color: var(--ink-mute); font-style: italic; }
+
+  /* BARS */
+  .bar {
+    grid-row: 1;
+    align-self: center;
+    margin: 6px 4px;
+    height: 24px;
+    padding: 0 10px 0 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11.5px;
+    color: white;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border-radius: 2px;
+    min-width: 0;
+    font-weight: 500;
+    position: relative;
+  }
+  .bar-label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+    flex: 1;
+  }
+  .bar.cart { background-color: var(--cart); }
+  .bar.plp { background-color: var(--plp); }
+  .bar.experiments { background-color: var(--experiments); }
+  .bar.implementations { background-color: var(--implementations); }
+  .bar.compliance { background-color: var(--compliance); }
+  .bar.promotions { background-color: var(--promotions); }
+  .bar.proposed {
+    background-color: var(--ground);
+    color: var(--signal);
+    border: 1.5px dashed var(--signal);
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent 0,
+      transparent 6px,
+      rgba(122, 41, 36, 0.08) 6px,
+      rgba(122, 41, 36, 0.08) 8px
+    );
+    font-weight: 600;
+  }
+  .bar.deferred {
+    background-color: transparent;
+    color: var(--ink-mute);
+    border: 1px dashed var(--ink-mute);
+    font-weight: 500;
+    text-decoration: line-through;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--ink-mute);
+    opacity: 0.75;
+  }
+  .bar.done {
+    background-color: var(--ink-mute);
+    opacity: 0.7;
+  }
+  .bar.epic {
+    min-height: 30px;
+    font-weight: 700;
+    font-size: 12px;
+  }
+  .bar.crosses {
+    background-image: linear-gradient(
+      to right,
+      rgba(0,0,0,0.32) 0%,
+      rgba(0,0,0,0.32) var(--past, 50%),
+      transparent var(--past, 50%),
+      transparent 100%
+    );
+  }
+  .bar.proposed.crosses {
+    background-image:
+      linear-gradient(
+        to right,
+        rgba(122, 41, 36, 0.18) 0%,
+        rgba(122, 41, 36, 0.18) var(--past, 50%),
+        transparent var(--past, 50%),
+        transparent 100%
+      ),
+      repeating-linear-gradient(
+        45deg,
+        transparent 0,
+        transparent 6px,
+        rgba(122, 41, 36, 0.08) 6px,
+        rgba(122, 41, 36, 0.08) 8px
+      );
+  }
+  .bar-status {
+    font-size: 9px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.85;
+    margin-left: auto;
+    padding-left: 6px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  /* TASK-TYPE PILL */
+  .bar-type {
+    font-size: 8.5px;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    padding: 2.5px 5px;
+    background: rgba(255, 255, 255, 0.24);
+    color: white;
+    border-radius: 2px;
+    flex-shrink: 0;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+  .bar.proposed .bar-type {
+    background: rgba(122, 41, 36, 0.16);
+    color: var(--signal);
+  }
+  .bar.deferred .bar-type {
+    background: transparent;
+    color: var(--ink-mute);
+    border: 1px solid var(--ink-mute);
+    padding: 1.5px 4px;
+  }
+  .bar.done .bar-type {
+    background: rgba(255, 255, 255, 0.32);
+    color: white;
+  }
+  .bar.epic .bar-type {
+    background: rgba(255, 255, 255, 0.3);
+    font-size: 9px;
+  }
+
+  /* LEGEND */
+  .legend-note {
+    margin-top: 28px;
+    margin-bottom: 12px;
+    font-size: 11px;
+    color: var(--ink-mute);
+    line-height: 1.5;
+    max-width: 760px;
+  }
+  .legend {
+    margin-top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 28px;
+    align-items: center;
+    font-size: 12px;
+    color: var(--ink-mid);
+    font-weight: 500;
+  }
+  .legend-group {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding-right: 18px;
+  }
+  .legend-group:not(:last-child) {
+    border-right: 1px solid var(--rule);
+  }
+  .legend-item { display: flex; align-items: center; gap: 8px; }
+  .swatch {
+    width: 18px;
+    height: 12px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+  .swatch.cart { background-color: var(--cart); }
+  .swatch.plp { background-color: var(--plp); }
+  .swatch.experiments { background-color: var(--experiments); }
+  .swatch.implementations { background-color: var(--implementations); }
+  .swatch.compliance { background-color: var(--compliance); }
+  .swatch.promotions { background-color: var(--promotions); }
+  .swatch.proposed {
+    background-color: var(--ground);
+    border: 1.5px dashed var(--signal);
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent 0,
+      transparent 4px,
+      rgba(122, 41, 36, 0.1) 4px,
+      rgba(122, 41, 36, 0.1) 6px
+    );
+  }
+  .swatch.deferred {
+    background-color: transparent;
+    border: 1px dashed var(--ink-mute);
+  }
+  .swatch.done { background: var(--ink-mute); opacity: 0.7; }
+  .swatch.crosses {
+    background-image: linear-gradient(
+      to right,
+      rgba(0,0,0,0.45) 0 50%,
+      transparent 50% 100%
+    ), linear-gradient(var(--ink-mid), var(--ink-mid));
+  }
+  .legend-diamond {
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+  .legend-diamond.release { background: var(--counter); }
+  .legend-diamond.projected {
+    background: var(--ground);
+    border: 1.5px solid var(--counter);
+  }
+  .legend-diamond.holiday { background: var(--ink-mute); }
+  .legend-diamond.renewal { background: var(--signal); width: 12px; height: 12px; }
+  .legend-today {
+    width: 2px;
+    height: 14px;
+    background: var(--today);
+    opacity: 1;
+    flex-shrink: 0;
+  }
+  .legend-pill {
+    font-size: 8.5px;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    padding: 2.5px 5px;
+    background: var(--ink-mid);
+    color: white;
+    border-radius: 2px;
+    text-transform: uppercase;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    font-size: 11px;
+    color: var(--ink-mute);
+    letter-spacing: 0.04em;
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    body { padding: 16px 12px 40px; font-size: 13px; }
+    .topbar {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      padding-bottom: 12px;
+      margin-bottom: 18px;
+    }
+    .topbar-actions { margin-left: 0; }
+    .topbar-meta { order: 3; }
+    .title-block { margin-bottom: 24px; }
+    h1.title { font-size: 22px; letter-spacing: -0.02em; margin-bottom: 6px; }
+    .subtitle { font-size: 12px; line-height: 1.4; }
+    .gantt-wrap { margin-top: 24px; }
+    .gantt { --label-col: 160px; min-width: 1000px; }
+    .row-label { padding: 6px 8px; font-size: 11px; }
+    .row-label.indented { padding-left: 18px; }
+    .row-label.sub-indented { padding-left: 28px; font-size: 11px; }
+    .row-label .row-meta { display: none; }
+    .row-label .label-top { gap: 6px; }
+    .row-label .id, .row-label a.id { font-size: 9px; padding: 1px 4px; }
+    .bar { font-size: 10px; min-height: 22px; }
+    .bar-type { font-size: 8px; padding: 1px 4px; }
+    .bar-label { font-size: 10px; }
+    .sprint-band { font-size: 9px; padding: 4px 6px; }
+    .col-resizer { width: 14px; margin-left: -7px; }
+    .col-resizer::after { opacity: 1; background: var(--rule); height: 24px; }
+    .legend { flex-direction: column; gap: 8px; padding: 16px 12px; }
+    .legend-group { border-right: none !important; padding-right: 0; padding-bottom: 8px; border-bottom: 1px solid var(--rule); }
+    .legend-group:last-child { border-bottom: none; padding-bottom: 0; }
+    .today-flag { font-size: 9px; padding: 3px 6px 2px; top: 2px; }
+    footer { font-size: 10px; margin-top: 32px; padding-top: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="topbar">
+    <div class="eyebrow">Willie’s Remedy · Q2 2026</div>
+    <div class="topbar-actions">
+      <button class="toggle-btn" id="expandAll" type="button">Expand all</button>
+      <button class="toggle-btn" id="collapseAll" type="button">Collapse all</button>
+    </div>
+    <div class="topbar-meta">Q2 REVIEW · April – June</div>
+  </div>
+
+  <div class="title-block">
+    <h1 class="title">Willie’s Remedy — Q2 2026 Delivered Work</h1>
+    <p class="subtitle">What shipped April through June — the audits, technical remediation waves, rebuilt cancellation flows, and research program that set up the Q3 plan. Current quarter: <a href="index.html">Q3 2026 board</a>.</p>
+  </div>
+
+  <div class="gantt-wrap">
+    <div class="gantt">
+
+      <div class="today-line" id="todayLine">
+        <div class="today-flag">
+          <span>TODAY</span>
+          <span class="today-flag-date" id="todayDate">Jan 1</span>
+        </div>
+      </div>
+
+      <div class="col-resizer" id="colResizer" title="Drag to resize label column"></div>
+
+      <!-- ============================================================
+           TIMELINE GEOMETRY — the one thing everything else hangs on.
+           QUARTERLY BOARD: the track is a 16-column CSS grid —
+           2 carryover weeks from the prior quarter (prior-shaded,
+           they hold recently-shipped context) + 13 quarter weeks
+           + 1 next-quarter horizon column. Every bar and milestone
+           is placed with grid-column: {startCol} / {endCol}
+           (endCol is EXCLUSIVE). One column = one week; one sprint
+           = 2 weeks = 2 columns. Sprint NUMBERS CONTINUE across
+           quarters (ongoing retainer), and at each quarter boundary
+           the board is re-baselined (see SPEC.md §7).
+           If you change the column count, change repeat(16, 1fr)
+           in the CSS (.row-track) AND every cell run below to match.
+           ============================================================ -->
+
+      <div class="row sprint-row">
+        <div class="row-label">Sprint</div>
+        <div class="row-track">
+          <div class="sprint-band prior" style="grid-column: 1 / 5;">Kickoff &amp; Audits<span class="sprint-dates">Mar 16 – Apr 10</span></div>
+          <div class="sprint-band prior" style="grid-column: 5 / 7;">Sprint 1<span class="sprint-dates">Apr 13 – Apr 24</span></div>
+          <div class="sprint-band prior" style="grid-column: 7 / 9;">Sprint 2<span class="sprint-dates">Apr 27 – May 8</span></div>
+          <div class="sprint-band prior" style="grid-column: 9 / 11;">Sprint 3<span class="sprint-dates">May 11 – May 22</span></div>
+          <div class="sprint-band prior" style="grid-column: 11 / 13;">Sprint 4<span class="sprint-dates">May 25 – Jun 5</span></div>
+          <div class="sprint-band prior" style="grid-column: 13 / 15;">Sprint 5<span class="sprint-dates">Jun 8 – Jun 19</span></div>
+          <div class="sprint-band tint" style="grid-column: 15 / 16;">Sprint 6<span class="sprint-dates">Jun 22 →</span></div>
+          <div class="sprint-band renewal-band" style="grid-column: 16 / 17;">Q3 →</div>
+        </div>
+      </div>
+
+      <div class="row week-row">
+        <div class="row-label">Week of</div>
+        <div class="row-track">
+          <div class="week-label prior">Mar 16</div>
+          <div class="week-label prior">Mar 23</div>
+          <div class="week-label prior">Mar 30</div>
+          <div class="week-label prior">Apr 6</div>
+          <div class="week-label prior">Apr 13</div>
+          <div class="week-label prior">Apr 20</div>
+          <div class="week-label prior">Apr 27</div>
+          <div class="week-label prior">May 4</div>
+          <div class="week-label prior">May 11</div>
+          <div class="week-label prior">May 18</div>
+          <div class="week-label prior">May 25</div>
+          <div class="week-label prior">Jun 1</div>
+          <div class="week-label prior">Jun 8</div>
+          <div class="week-label prior">Jun 15</div>
+          <div class="week-label prior">Jun 22</div>
+          <div class="week-label">Jun 29</div>
+        </div>
+      </div>
+
+      <div class="row milestone-row">
+        <div class="row-label">Milestones</div>
+        <div class="row-track">
+          <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div>
+          <div class="milestone" style="grid-column: 4 / 5;">
+            <div class="diamond release"></div>
+            <div class="milestone-label">Strategy &amp; roadmap aligned · 4/6</div>
+          </div>
+          <div class="milestone" style="grid-column: 9 / 10;">
+            <div class="diamond release"></div>
+            <div class="milestone-label">Production release · 5/14</div>
+          </div>
+          <div class="milestone" style="grid-column: 13 / 14;">
+            <div class="diamond release"></div>
+            <div class="milestone-label">Cancellation flows staged · 6/11</div>
+          </div>
+          <div class="milestone" style="grid-column: 14 / 15;">
+            <div class="diamond release"></div>
+            <div class="milestone-label">Site re-skin launch · 6/15</div>
+          </div>
+          <div class="milestone renewal" style="grid-column: 16 / 17;">
+            <div class="diamond renewal"></div>
+            <div class="milestone-label">Q3 KICKOFF · 7/1</div>
+          </div>
+        </div>
+      </div>
+
+      <details class="group" open>
+        <summary class="row group-row">
+          <div class="row-label">Tech Audit <a class="group-id" href="https://anatta-io.atlassian.net/browse/WR-114" target="_blank" rel="noopener">WR-114</a></div>
+          <div class="row-track">
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div>
+            <div class="bar implementations epic" style="grid-column: 1 / 16;"><span class="bar-type">IMPL</span>Tech Audit remediation <span class="bar-status">Continues in Q3</span></div>
+          </div>
+        </summary>
+        <div class="row">
+          <div class="row-label indented">
+            <span class="label-top"><span>Technical, speed, and SEO audits</span><span class="id">NEW</span></span>
+            <span class="row-meta">Delivered March · seeded the remediation backlog</span>
+          </div>
+          <div class="row-track">
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div>
+            <div class="bar implementations done" style="grid-column: 1 / 5;" title="Audit set delivered 3/19"><span class="bar-type">SPIKE</span><span class="bar-label">Delivered</span></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="row-label indented">
+            <span class="label-top"><a href="https://anatta-io.atlassian.net/browse/WR-82" target="_blank" rel="noopener">Theme structure cleanup — first wave</a><a class="id" href="https://anatta-io.atlassian.net/browse/WR-82" target="_blank" rel="noopener">WR-82</a></span>
+            <span class="row-meta">Five audit fixes shipped in the 5/14 release</span>
+          </div>
+          <div class="row-track">
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div>
+            <div class="bar implementations done" style="grid-column: 5 / 10;" title="Shipped 5/14"><span class="bar-type">IMPL</span><span class="bar-label">Shipped</span></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="row-label indented">
+            <span class="label-top"><a href="https://anatta-io.atlassian.net/browse/WR-90" target="_blank" rel="noopener">Script and code quality — second wave</a><a class="id" href="https://anatta-io.atlassian.net/browse/WR-90" target="_blank" rel="noopener">WR-90</a></span>
+            <span class="row-meta">Shipped 6/17 alongside three companion fixes</span>
+          </div>
+          <div class="row-track">
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div>
+            <div class="bar implementations done" style="grid-column: 9 / 14;" title="Shipped 6/17"><span class="bar-type">IMPL</span><span class="bar-label">Shipped</span></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="row-label indented">
+            <span class="label-top"><a href="https://anatta-io.atlassian.net/browse/WR-85" target="_blank" rel="noopener">Theme code cleanup — third wave</a><a class="id" href="https://anatta-io.atlassian.net/browse/WR-85" target="_blank" rel="noopener">WR-85</a></span>
+            <span class="row-meta">Completed at quarter end · shipped 6/30</span>
+          </div>
+          <div class="row-track">
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div>
+            <div class="bar implementations done" style="grid-column: 12 / 16;" title="Shipped 6/30"><span class="bar-type">IMPL</span><span class="bar-label">Shipped</span></div>
+          </div>
+        </div>
+      </details>
+
+      <details class="group" open>
+        <summary class="row group-row">
+          <div class="row-label">Subscription Portal <a class="group-id" href="https://anatta-io.atlassian.net/browse/WR-111" target="_blank" rel="noopener">WR-111</a></div>
+          <div class="row-track">
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div>
+            <div class="bar cart epic" style="grid-column: 3 / 16;"><span class="bar-type">IMPL</span>Cancellation &amp; retention flows <span class="bar-status">Continues in Q3</span></div>
+          </div>
+        </summary>
+        <div class="row">
+          <div class="row-label indented">
+            <span class="label-top"><span>Portal payments unblocked on staging</span><span class="id">NEW</span></span>
+            <span class="row-meta">Resolved 4/23 · unblocked the cancellation flow build</span>
+          </div>
+          <div class="row-track">
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div>
+            <div class="bar cart done" style="grid-column: 3 / 7;" title="Resolved 4/23"><span class="bar-type">IMPL</span><span class="bar-label">Resolved</span></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="row-label indented">
+            <span class="label-top"><span>Platform constraints mapped — flows redesigned</span><span class="id">NEW</span></span>
+            <span class="row-meta">Cancellation flows re-scoped into six reason paths (May)</span>
+          </div>
+          <div class="row-track">
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div>
+            <div class="bar cart done" style="grid-column: 8 / 12;" title="Re-scoped from the updated flow designs"><span class="bar-type">SPIKE</span><span class="bar-label">Re-scoped</span></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="row-label indented">
+            <span class="label-top"><a href="https://anatta-io.atlassian.net/browse/WR-159" target="_blank" rel="noopener">Cancellation flows — six reason paths built</a><a class="id" href="https://anatta-io.atlassian.net/browse/WR-159" target="_blank" rel="noopener">WR-159</a></span>
+            <span class="row-meta">Dev complete, QA cleared, staged 6/11</span>
+          </div>
+          <div class="row-track">
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div>
+            <div class="bar cart done" style="grid-column: 11 / 15;" title="Staged 6/11"><span class="bar-type">IMPL</span><span class="bar-label">Staged</span></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="row-label indented">
+            <span class="label-top"><a href="https://anatta-io.atlassian.net/browse/WR-172" target="_blank" rel="noopener">Portal bug set</a><a class="id" href="https://anatta-io.atlassian.net/browse/WR-172" target="_blank" rel="noopener">WR-172</a></span>
+            <span class="row-meta">Pause and reactivation fixes shipped mid-June</span>
+          </div>
+          <div class="row-track">
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div>
+            <div class="bar cart done" style="grid-column: 13 / 15;" title="Shipped 6/16"><span class="bar-type">BUG</span><span class="bar-label">Shipped</span></div>
+          </div>
+        </div>
+      </details>
+
+      <details class="group" open>
+        <summary class="row group-row">
+          <div class="row-label">UX Optimization <a class="group-id" href="https://anatta-io.atlassian.net/browse/WR-7" target="_blank" rel="noopener">WR-7</a></div>
+          <div class="row-track">
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div>
+          </div>
+        </summary>
+        <div class="row">
+          <div class="row-label indented">
+            <span class="label-top"><a href="https://anatta-io.atlassian.net/browse/WR-9" target="_blank" rel="noopener">Header and navigation design set</a><a class="id" href="https://anatta-io.atlassian.net/browse/WR-9" target="_blank" rel="noopener">WR-9</a></span>
+            <span class="row-meta">Four designs approved 4/20</span>
+          </div>
+          <div class="row-track">
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div>
+            <div class="bar plp done" style="grid-column: 4 / 7;" title="Approved 4/20"><span class="bar-type">IMPL</span><span class="bar-label">Approved</span></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="row-label indented">
+            <span class="label-top"><a href="https://anatta-io.atlassian.net/browse/WR-138" target="_blank" rel="noopener">Homepage value proposition above the fold</a><a class="id" href="https://anatta-io.atlassian.net/browse/WR-138" target="_blank" rel="noopener">WR-138</a></span>
+            <span class="row-meta">Design approved 4/29</span>
+          </div>
+          <div class="row-track">
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div>
+            <div class="bar plp done" style="grid-column: 6 / 8;" title="Approved 4/29"><span class="bar-type">IMPL</span><span class="bar-label">Approved</span></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="row-label indented">
+            <span class="label-top"><span>Design pause for the site re-skin</span><span class="id">NEW</span></span>
+            <span class="row-meta">Agreed sequencing: partner re-skin ships first, designs resume after</span>
+          </div>
+          <div class="row-track">
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div>
+            <div class="bar plp done" style="grid-column: 10 / 15;" title="Sequencing decision"><span class="bar-type">CONV</span><span class="bar-label">Decision</span></div>
+          </div>
+        </div>
+      </details>
+
+      <details class="group" open>
+        <summary class="row group-row">
+          <div class="row-label">Research &amp; CRO <a class="group-id" href="https://anatta-io.atlassian.net/browse/WR-5" target="_blank" rel="noopener">WR-5</a></div>
+          <div class="row-track">
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div>
+          </div>
+        </summary>
+        <div class="row">
+          <div class="row-label indented">
+            <span class="label-top"><span>Email program audit</span><span class="id">NEW</span></span>
+            <span class="row-meta">Findings and strategy recommendations delivered (April)</span>
+          </div>
+          <div class="row-track">
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div>
+            <div class="bar experiments done" style="grid-column: 2 / 6;" title="Delivered April"><span class="bar-type">SPIKE</span><span class="bar-label">Delivered</span></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="row-label indented">
+            <span class="label-top"><span>Subscriber research — surveys, interviews, polls</span><span class="id">NEW</span></span>
+            <span class="row-meta">Quantitative readout 6/12 · qualitative wrap at quarter end</span>
+          </div>
+          <div class="row-track">
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div>
+            <div class="bar experiments done" style="grid-column: 6 / 14;" title="Multi-track research program"><span class="bar-type">SPIKE</span><span class="bar-label">Research</span></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="row-label indented">
+            <span class="label-top"><span>Pre-re-skin site benchmark</span><span class="id">NEW</span></span>
+            <span class="row-meta">Baseline captured ahead of the 6/15 launch</span>
+          </div>
+          <div class="row-track">
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div>
+            <div class="bar experiments done" style="grid-column: 12 / 14;" title="Baseline captured"><span class="bar-type">SPIKE</span><span class="bar-label">Baseline</span></div>
+          </div>
+        </div>
+      </details>
+
+      <details class="group" open>
+        <summary class="row group-row">
+          <div class="row-label">Quality &amp; Bug Fixes</div>
+          <div class="row-track">
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div>
+          </div>
+        </summary>
+        <div class="row">
+          <div class="row-label indented">
+            <span class="label-top"><a href="https://anatta-io.atlassian.net/browse/WR-144" target="_blank" rel="noopener">Re-skin QA fixes</a><a class="id" href="https://anatta-io.atlassian.net/browse/WR-144" target="_blank" rel="noopener">WR-144</a></span>
+            <span class="row-meta">Three fixes shipped 5/12</span>
+          </div>
+          <div class="row-track">
+            <div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell prior"></div><div class="cell"></div>
+            <div class="bar compliance done" style="grid-column: 8 / 10;" title="Shipped 5/12"><span class="bar-type">BUG</span><span class="bar-label">Shipped</span></div>
+          </div>
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+  <p class="legend-note">Click any row title to open its Jira ticket. Click group headers to collapse or expand swimlanes. Task-type pills (IMPL / TEST / BUG / SPIKE / CONV) appear at the start of each bar. Lane colors are fixed by the format; lane names are per-client.</p>
+
+  <div class="legend">
+    <div class="legend-group">
+      <div class="legend-item"><span class="swatch cart"></span> Subscription Portal</div>
+      <div class="legend-item"><span class="swatch plp"></span> UX Optimization</div>
+      <div class="legend-item"><span class="swatch experiments"></span> Research &amp; CRO</div>
+      <div class="legend-item"><span class="swatch implementations"></span> Tech Audit</div>
+      <div class="legend-item"><span class="swatch compliance"></span> Quality &amp; Bug Fixes</div>
+    </div>
+    <div class="legend-group">
+      <div class="legend-item"><span class="legend-pill">IMPL</span> Implementation</div>
+      <div class="legend-item"><span class="legend-pill">BUG</span> Defect</div>
+      <div class="legend-item"><span class="legend-pill">SPIKE</span> Investigation</div>
+      <div class="legend-item"><span class="legend-pill">CONV</span> Conversation / decision</div>
+    </div>
+    <div class="legend-group">
+      <div class="legend-item"><span class="swatch done"></span> Done</div>
+    </div>
+    <div class="legend-group">
+      <div class="legend-item"><span class="legend-diamond release"></span> Released</div>
+      <div class="legend-item"><span class="legend-diamond projected"></span> Projected release</div>
+      <div class="legend-item"><span class="legend-diamond renewal"></span> Quarter boundary</div>
+    </div>
+    <div class="legend-group" style="border-right: none;">
+      <div class="legend-item"><span class="legend-today"></span> Today</div>
+    </div>
+  </div>
+
+  <footer>
+    Q2 2026 review · Willie’s Remedy × Anatta · Click any row title to open in Jira · <a href="index.html">Current quarter (Q3)</a>.
+  </footer>
+
+</div>
+
+<script>
+  (function() {
+    var ganttStart = new Date('2026-03-16T00:00:00'); // SETUP: Monday of the FIRST column (first carryover week)
+    var ganttEnd = new Date('2026-07-06T00:00:00'); // SETUP: end of the LAST column (next-quarter horizon week)
+
+    var MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+    function update() {
+      var today = new Date();
+      var todayDate = document.getElementById('todayDate');
+      if (todayDate) todayDate.textContent = MONTHS[today.getMonth()] + ' ' + today.getDate();
+
+      var elapsed = (today - ganttStart) / 86400000;
+      var totalSpan = (ganttEnd - ganttStart) / 86400000;
+      var pct = Math.max(0, Math.min(1, elapsed / totalSpan));
+
+      var line = document.getElementById('todayLine');
+      var gantt = document.querySelector('.gantt');
+      if (line && gantt) {
+        var labelW = parseInt(getComputedStyle(gantt).getPropertyValue('--label-col'), 10) || 280;
+        var ganttW = gantt.offsetWidth;
+        var timelineW = ganttW - labelW;
+        line.style.left = (labelW + timelineW * pct) + 'px';
+        line.style.display = 'block';
+      }
+    }
+
+    function setAll(open) {
+      document.querySelectorAll('details.group').forEach(function(d) { d.open = open; });
+    }
+
+    function bindControls() {
+      var expandBtn = document.getElementById('expandAll');
+      var collapseBtn = document.getElementById('collapseAll');
+      if (expandBtn) expandBtn.addEventListener('click', function() { setAll(true); });
+      if (collapseBtn) collapseBtn.addEventListener('click', function() { setAll(false); });
+
+      // Prevent summary anchor clicks from toggling the accordion
+      document.querySelectorAll('summary.row a').forEach(function(a) {
+        a.addEventListener('click', function(e) { e.stopPropagation(); });
+      });
+
+      bindColResizer();
+    }
+
+    function bindColResizer() {
+      var resizer = document.getElementById('colResizer');
+      var gantt = document.querySelector('.gantt');
+      if (!resizer || !gantt) return;
+
+      var MIN = 200, MAX = 600;
+      var saved = parseInt(localStorage.getItem('roadmap-label-col'), 10);
+      if (!isNaN(saved) && saved >= MIN && saved <= MAX) {
+        gantt.style.setProperty('--label-col', saved + 'px');
+      }
+
+      resizer.addEventListener('pointerdown', function(e) {
+        e.preventDefault();
+        var startX = e.clientX;
+        var startW = parseInt(getComputedStyle(gantt).getPropertyValue('--label-col'), 10) || 280;
+        resizer.classList.add('dragging');
+        try { resizer.setPointerCapture(e.pointerId); } catch (_) {}
+        document.body.style.userSelect = 'none';
+        document.body.style.cursor = 'col-resize';
+
+        function onMove(ev) {
+          var newW = Math.max(MIN, Math.min(MAX, startW + (ev.clientX - startX)));
+          gantt.style.setProperty('--label-col', newW + 'px');
+          update();
+        }
+        function onUp() {
+          resizer.classList.remove('dragging');
+          document.body.style.userSelect = '';
+          document.body.style.cursor = '';
+          var finalW = parseInt(getComputedStyle(gantt).getPropertyValue('--label-col'), 10);
+          if (finalW) localStorage.setItem('roadmap-label-col', finalW);
+          window.removeEventListener('pointermove', onMove);
+          window.removeEventListener('pointerup', onUp);
+        }
+        window.addEventListener('pointermove', onMove);
+        window.addEventListener('pointerup', onUp);
+      });
+    }
+
+    function scheduleUpdate() {
+      requestAnimationFrame(update);
+    }
+
+    function init() {
+      update();
+      bindControls();
+      scheduleUpdate();
+
+      var gantt = document.querySelector('.gantt');
+      if (gantt && typeof ResizeObserver !== 'undefined') {
+        var ro = new ResizeObserver(scheduleUpdate);
+        ro.observe(gantt);
+      }
+
+      if (document.fonts && document.fonts.ready && typeof document.fonts.ready.then === 'function') {
+        document.fonts.ready.then(scheduleUpdate);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+    window.addEventListener('load', scheduleUpdate);
+    window.addEventListener('resize', scheduleUpdate);
+    setInterval(update, 60000);
+    document.addEventListener('visibilitychange', function() {
+      if (!document.hidden) update();
+    });
+  })();
+</script>
+</body>
+</html>
